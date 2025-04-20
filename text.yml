@@ -1,0 +1,6 @@
+---
+- name: Prasanna
+  hosts: all
+  tasks: 
+    - name: check date
+      shell: date
