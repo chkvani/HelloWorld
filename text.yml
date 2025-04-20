@@ -4,3 +4,7 @@
   tasks: 
     - name: check date
       shell: date
+      register: out
+    - name: check output
+      debug: 
+        msg: "{{out.stdout}}"
