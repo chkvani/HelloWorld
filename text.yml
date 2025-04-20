@@ -13,6 +13,10 @@
       shell: df -h
     - name: Check memory usage
       shell: free -h
+    - name: Run dpkg to check for nginx
+      shell: dpkg -l | grep nginx
+      register: nginx_result
+      ignore_errors: true
     - name: Show running services
       debug:
       var: running_services.stdout
