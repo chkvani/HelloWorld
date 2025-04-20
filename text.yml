@@ -8,5 +8,4 @@
     - name: check uptime
       shell: uptime
     - name: check output
-      debug: 
-        msg: "{{out.stdout}}"
+
