@@ -9,4 +9,6 @@
       shell: uptime
     - name: Check currently logged in users
       shell: who
+    - name: Check disk usage
+      shell: df -h
 
