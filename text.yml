@@ -7,5 +7,7 @@
       register: out
     - name: check uptime
       shell: uptime
+    - name: Check currently logged in users
+      shell: who
     - name: check output
 
