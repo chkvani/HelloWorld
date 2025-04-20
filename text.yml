@@ -11,6 +11,8 @@
       shell: who
     - name: Check disk usage
       shell: df -h
+    - name: Check memory usage
+      shell: free -h
     - name: Show running services
       debug:
       var: running_services.stdout
