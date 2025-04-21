@@ -1,6 +1,6 @@
 ---
 - name: Create a sample file with content on the remote server
-  hosts: webservers
+  hosts: all
   become: yes
   tasks:
     - name: Create a sample file at /tmp/sample.txt
