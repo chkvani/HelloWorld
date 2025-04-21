@@ -1,9 +1,10 @@
 ---
-- name: Create a file on remote server
-  hosts: webservers 
-  become: yes         # Use 'yes' if sudo is required
+- name: Create a sample file with content on the remote server
+  hosts: webservers
+  become: yes
   tasks:
-    - name: Create a text file on the remote server
+    - name: Create a sample file at /tmp/sample.txt
       copy:
-        content: "This file was created by Ansible"
+        content: "This file was created by Ansible Tower"
         dest: /tmp/sample.txt
+
