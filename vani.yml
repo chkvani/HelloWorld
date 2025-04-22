@@ -2,7 +2,6 @@
 ---
 - name: Create folder and file in /tmp/Vani with today's date
   hosts: all
-  become: yes
   tasks:
     - name: Create /tmp/Vani folder (if not exists)
       file:
