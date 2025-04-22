@@ -1,1 +1,20 @@
 
+---
+- name: Create folder and file in /tmp/Vani with today's date
+  hosts: all
+  become: yes
+  tasks:
+    - name: Create /tmp/Vani folder (if not exists)
+      file:
+        path: /tmp/Vani
+        state: directory
+        mode: '0755'
+
+    - name: Check if /tmp/Vani folder exists
+      stat:
+        path: /tmp/Vani
+      register: vani_folder
+
+    - name: Create file with today's date if folder exists
+      shell: echo "Hello World" > /tmp/Vani/prasanna.txt
+      when: vani_folder.stat.exists
