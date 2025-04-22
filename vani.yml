@@ -1,7 +1,6 @@
 ---
 - name: Create folder in /tmp/Vani on specific server 54.211.2.245
   hosts: all  # Run this playbook only on the specified server
-  become: yes
   tasks:
     - name: Create /tmp/Vani folder (if not exists)
       file:
