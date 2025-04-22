@@ -1,21 +1,10 @@
 ---
-- name: Create folder and file in /tmp/Vani on specific server 54.211.2.245
-  hosts: all
+- name: Create folder in /tmp/Vani on specific server 54.211.2.245
+  hosts: 54.211.2.245  # Run this playbook only on the specified server
   become: yes
   tasks:
-    - name: Create /tmp/Vani folder on 54.211.2.245 (if not exists)
+    - name: Create /tmp/Vani folder (if not exists)
       file:
         path: /tmp/Vani
         state: directory
         mode: '0755'
-      when: inventory_hostname == "54.211.2.245"  # Ensures the task runs only on this server
-
-    - name: Check if /tmp/Vani folder exists
-      stat:
-        path: /tmp/Vani
-      register: vani_folder
-      when: inventory_hostname == "54.211.2.245"  # Ensures the task runs only on this server
-
-    - name: Create file with today's date if folder exists on 54.211.2.245
-      shell: echo "Hello World" > /tmp/Vani/prasanna.txt
-      when: vani_folder.stat.exists and inventory_hostname == "54.211.2.245"  # Ensures the task runs only on this server
