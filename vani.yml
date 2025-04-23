@@ -2,17 +2,17 @@
 - name: Create folder in /tmp/Vani on specific server 54.211.2.245
   hosts: all
   tasks:
-    - name: Create /tmp/Vani folder (if not exists)
+   - name: Create /tmp/Vani folder (if not exists)
       file:
         path: /tmp/Vani
         state: directory
         mode: '0755'
 
-     - name: Create a file inside /tmp/Vani if folder exists
+    - name: Create a file inside /tmp/Vani if folder exists
       copy:
         content: "Hello from Ansible"
         dest: /tmp/Vani/hello.txt
-      - name: Read the content of /tmp/Vani/hello.txt
+    - name: Read the content of /tmp/Vani/hello.txt
        slurp:
         src: /tmp/Vani/hello.txt
        register: file_data 
