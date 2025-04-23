@@ -1,13 +1,15 @@
 ---
 - name: Create folder in /tmp/Vani on specific server 54.211.2.245
-  hosts: all  # Run this playbook only on the specified server
+  hosts: all
   tasks:
     - name: Create /tmp/Vani folder (if not exists)
       file:
         path: /tmp/Vani
         state: directory
         mode: '0755'
-     - name: Create a file inside /tmp/Vani if folder exists
-       copy:
-         content:"Hello from Ansible"
-         dest: /tem/vani/hello.txt
+
+    - name: Create a file inside /tmp/Vani if folder exists
+      copy:
+        content: "Hello from Ansible"
+        dest: /tmp/Vani/hello.txt
+
