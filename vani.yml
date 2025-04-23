@@ -8,11 +8,11 @@
         state: directory
         mode: '0755'
 
-    - name: Create a file inside /tmp/Vani if folder exists
+     - name: Create a file inside /tmp/Vani if folder exists
       copy:
         content: "Hello from Ansible"
         dest: /tmp/Vani/hello.txt
-     - name: Read the content of /tmp/Vani/hello.txt
+      - name: Read the content of /tmp/Vani/hello.txt
        slurp:
         src: /tmp/Vani/hello.txt
        register: file_data 
