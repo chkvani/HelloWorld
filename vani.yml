@@ -7,3 +7,7 @@
         path: /tmp/Vani
         state: directory
         mode: '0755'
+     - name: Create a file inside /tmp/Vani if folder exists
+       copy:
+         content:"Hello from Ansible"
+         dest: /tem/vani/hello.txt
