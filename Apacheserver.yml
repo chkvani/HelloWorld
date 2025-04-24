@@ -11,6 +11,9 @@
     - name: Print success message
       debug:
         msg: "Apache successfully installed"
+
+    - name: Check Apache service status
+      service_facts:
         
     - name: Check the Apache status
       debug:
