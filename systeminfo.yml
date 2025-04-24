@@ -14,7 +14,7 @@
     - name: Render system info HTML from Jinja template
       template:
         src: templates/test.j2
-        dest: /temp/index.html
+        dest: /tmp/index.html
       vars:
         hostname: "{{ hostname_output.stdout }}"
         uptime: "{{ uptime_output.stdout }}"
