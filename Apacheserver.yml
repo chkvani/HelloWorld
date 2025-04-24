@@ -27,6 +27,9 @@
       service:
         name: apache2
         state: stopped
+
+    - name: Refresh service facts after stopping
+      service_facts:
         
     - name: Check the Apache status
       debug:
