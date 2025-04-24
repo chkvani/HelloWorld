@@ -11,5 +11,13 @@
     - name: Print success message
       debug:
         msg: "Apache successfully installed"
+        
+    - name: Check the Apache status
+      debug:
+      msg: >
+          Apache is {{
+            'running' if services['apache2'].state == 'running'
+            else 'not running'
+          }}
 
   
