@@ -14,7 +14,7 @@
         
     - name: Check the Apache status
       debug:
-      msg: >
+        msg: >
           Apache is {{
             'running' if services['apache2'].state == 'running'
             else 'not running'
