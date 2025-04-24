@@ -28,7 +28,7 @@
         name: apache2
         state: stopped
         
-     - name: Check the Apache status
+    - name: Check the Apache status
       debug:
         msg: >
           Apache is {{
