@@ -1,1 +1,9 @@
-
+---
+- name: jinga template 
+  hosts: all
+  vars:
+    my_name: "Kiran Vani"
+  tasks:
+    - name: print the jinga
+      debug:
+        msg: "Hello my name is {{my_name}}"
