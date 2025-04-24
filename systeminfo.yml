@@ -1,0 +1,20 @@
+---
+- name: Gather and render system info to HTML
+  hosts: all
+  become: true
+  tasks:
+    - name: Get hostname
+      command: hostname
+      register: hostname_output
+
+    - name: Get uptime
+      command: uptime
+      register: uptime_output
+
+    - name: Render system info HTML from Jinja template
+      template:
+        src: templates/test.j2
+        dest: /temp/index.html
+      vars:
+        hostname: "{{ hostname_output.stdout }}"
+        uptime: "{{ uptime_output.stdout }}"
