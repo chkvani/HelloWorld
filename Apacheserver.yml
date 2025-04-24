@@ -1,0 +1,15 @@
+---
+- name: Install Apache server
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install Apache server
+      apt:
+        name: apache2
+        state: present
+
+    - name: Print success message
+      debug:
+        msg: "Apache successfully installed"
+
+  
