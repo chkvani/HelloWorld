@@ -36,4 +36,9 @@
             else 'not running'
           }}
 
+    - name: Start the Apache server
+      service:
+        name: apache2
+        state: started
+
   
