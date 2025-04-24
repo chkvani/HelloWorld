@@ -23,4 +23,9 @@
             else 'not running'
           }}
 
+    - name: Stop the Apache server
+      service:
+        name: apache2
+        state: stopped
+
   
